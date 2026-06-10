@@ -44,6 +44,19 @@
   .send:hover { background: #a85423; }
   .note { text-align: center; font-size: 12px; color: #c9b48a; margin-top: 18px; }
 
+  .jobs { padding: 70px 6%; }
+  .jobs h2 { text-align: center; font-size: 30px; text-transform: uppercase; margin-bottom: 10px; }
+  .cork { max-width: 880px; margin: 0 auto; background: #c89b66; border: 10px solid #6e4a26; border-radius: 4px; padding: 36px 30px; box-shadow: inset 0 0 30px rgba(0,0,0,.25), 0 6px 16px rgba(0,0,0,.25); display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+  .pinned { background: #fffdf2; padding: 22px 16px 18px; text-align: center; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,.3); font-size: 13px; line-height: 1.5; }
+  .pinned:nth-child(odd) { transform: rotate(-2deg); }
+  .pinned:nth-child(even) { transform: rotate(2deg); background: #fdf6d8; }
+  .pinned .pin { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #ff6b6b, #a31616); box-shadow: 0 2px 4px rgba(0,0,0,.4); }
+  .pinned .job-icon { font-size: 26px; margin-bottom: 6px; }
+  .pinned .stamp { display: inline-block; margin-top: 10px; font-family: "Arial Black", sans-serif; font-size: 11px; letter-spacing: 1px; padding: 3px 10px; border: 2px solid; transform: rotate(-4deg); }
+  .pinned .stamp.done { color: #2e7d32; border-color: #2e7d32; }
+  .pinned .stamp.booked { color: #c1652f; border-color: #c1652f; }
+  .jobs .note { text-align: center; font-size: 12px; color: #8a7351; margin-top: 18px; }
+
   .about { padding: 70px 6%; text-align: center; max-width: 680px; margin: 0 auto; }
   .about h2 { font-size: 26px; text-transform: uppercase; margin-bottom: 18px; }
   .about p { font-size: 15px; line-height: 1.7; }
@@ -105,6 +118,18 @@
       <button class="send">🔨 Request a Quote</button>
     </div>
     <p class="note">* Every job quoted up front before work starts. No surprises, ever.</p>
+  </section>
+
+  <section class="jobs">
+    <h2>This Week's Jobs</h2>
+    <div class="rule"></div>
+    <div class="cork">
+      <div class="pinned"><div class="pin"></div><div class="job-icon">🚚</div>2-bedroom move<br>— Elm St<br><span class="stamp done">DONE ✔</span></div>
+      <div class="pinned"><div class="pin"></div><div class="job-icon">🌿</div>Hedge trim + lawn<br>— Pine Rd<br><span class="stamp done">DONE ✔</span></div>
+      <div class="pinned"><div class="pin"></div><div class="job-icon">🔨</div>Deck board repair<br>— King Ave<br><span class="stamp done">DONE ✔</span></div>
+      <div class="pinned"><div class="pin"></div><div class="job-icon">🧹</div>Garage cleanout<br>— Lake Dr<br><span class="stamp booked">BOOKED</span></div>
+    </div>
+    <p class="note">* Fresh off the workbench — updated every week.</p>
   </section>
 
   <section class="about">
