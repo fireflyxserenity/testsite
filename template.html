@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dylan's Job Box — Template Variants</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", sans-serif; height: 100vh; display: flex; flex-direction: column; background: #3e2f1c; }
+  .bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #2e2012; flex-wrap: wrap; }
+  .bar .label { color: #c9b48a; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-right: 8px; }
+  .bar button { border: 1px solid #6e4a26; background: #4a331b; color: #e8d9bd; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; }
+  .bar button:hover { background: #5c4023; color: #fff; }
+  .bar button.active { background: #f4a52e; border-color: #f4a52e; color: #2e2012; }
+  iframe { flex: 1; width: 100%; border: none; background: #fff; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <span class="label">🧰 Dylan's Pick — How Rustic?</span>
+    <button data-src="variant-extra-rustic.html">1 · Extra Rustic</button>
+    <button class="active" data-src="mockup4.html">2 · Original</button>
+    <button data-src="variant-rustic-modern.html">3 · Rustic-Modern</button>
+    <button data-src="variant-modern.html">4 · Fully Modern</button>
+  </div>
+  <iframe id="frame" src="mockup4.html"></iframe>
+<script>
+  const frame = document.getElementById('frame');
+  document.querySelectorAll('.bar button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.bar button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      frame.src = btn.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>
