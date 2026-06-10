@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dylan's Job Box — Photo Contractor</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", Arial, sans-serif; color: #1c2733; line-height: 1.6; }
+
+  .topbar { background: #16324f; color: #cfe0f0; font-size: 13px; padding: 8px 6%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .topbar strong { color: #ff7a1a; }
+
+  header { background: #fff; padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,.08); position: relative; z-index: 2; }
+  .logo { font-size: 21px; font-weight: 800; color: #16324f; }
+  .logo span { color: #ff7a1a; }
+  nav a { text-decoration: none; color: #1c2733; font-weight: 600; font-size: 14px; margin-left: 24px; }
+  nav a:hover { color: #ff7a1a; }
+  nav a.phone { background: #ff7a1a; color: #fff; padding: 10px 20px; border-radius: 6px; }
+
+  .hero { position: relative; min-height: 480px; display: flex; align-items: center; padding: 60px 6%;
+    background: linear-gradient(rgba(13,28,44,.78), rgba(13,28,44,.78)),
+      repeating-linear-gradient(45deg, #3d566e 0 24px, #34495e 24px 48px); }
+  .hero .photo-note { position: absolute; top: 18px; right: 20px; background: rgba(255,255,255,.15); color: #dce8f5; font-size: 12px; padding: 6px 14px; border-radius: 999px; border: 1px dashed rgba(255,255,255,.4); }
+  .hero .content { max-width: 580px; color: #fff; }
+  .hero h1 { font-size: 46px; font-weight: 800; line-height: 1.1; margin-bottom: 18px; }
+  .hero h1 span { color: #ff7a1a; }
+  .hero p { font-size: 18px; color: #d6e2ef; margin-bottom: 28px; }
+  .btn { display: inline-block; background: #ff7a1a; color: #fff; font-weight: 700; padding: 16px 34px; border-radius: 6px; text-decoration: none; font-size: 16px; }
+  .btn:hover { background: #e96c0e; }
+  .btn.alt { background: transparent; border: 2px solid #fff; margin-left: 12px; }
+  .ticks { display: flex; gap: 22px; margin-top: 28px; flex-wrap: wrap; }
+  .ticks div { font-size: 14px; color: #d6e2ef; }
+  .ticks div::before { content: "✔ "; color: #ff7a1a; font-weight: 800; }
+
+  .services { padding: 80px 6%; max-width: 1100px; margin: 0 auto; }
+  .services h2, .gallery h2 { font-size: 32px; font-weight: 800; color: #16324f; text-align: center; }
+  .underline { width: 70px; height: 4px; background: #ff7a1a; margin: 14px auto 44px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  .card { border: 1px solid #e3e8ee; border-radius: 10px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,.06); }
+  .card .img { height: 130px; display: flex; align-items: center; justify-content: center; font-size: 48px; color: #fff; }
+  .card:nth-child(1) .img { background: linear-gradient(135deg, #16324f, #2a5a8c); }
+  .card:nth-child(2) .img { background: linear-gradient(135deg, #2e6b34, #4d9e55); }
+  .card:nth-child(3) .img { background: linear-gradient(135deg, #8c4a16, #c9772e); }
+  .card:nth-child(4) .img { background: linear-gradient(135deg, #5b3d8c, #8a64c4); }
+  .card .body { padding: 22px; }
+  .card h3 { font-size: 18px; font-weight: 700; color: #16324f; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #5a6877; }
+
+  .gallery { background: #f4f7fa; padding: 80px 6%; }
+  .ggrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; }
+  .shot { height: 160px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #fff; font-size: 13px; gap: 6px; }
+  .shot .em { font-size: 36px; }
+  .shot:nth-child(1) { background: #4a6f8f; } .shot:nth-child(2) { background: #5f8f4a; }
+  .shot:nth-child(3) { background: #8f6f4a; } .shot:nth-child(4) { background: #6f4a8f; }
+  .gnote { text-align: center; font-size: 13px; color: #7b8794; margin-top: 18px; }
+
+  .cta { background: #16324f; color: #fff; text-align: center; padding: 70px 6%; }
+  .cta h2 { font-size: 34px; font-weight: 800; margin-bottom: 10px; }
+  .cta p { color: #b9cbdd; margin-bottom: 26px; }
+
+  footer { background: #0d1c2c; color: #8fa3b8; padding: 30px 6%; text-align: center; font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div>⏰ Mon–Sat, 8am–6pm · Serving the whole neighbourhood</div>
+    <div>Call or text: <strong>(555) 123-4567</strong></div>
+  </div>
+
+  <header>
+    <div class="logo">🧰 DYLAN'S <span>JOB BOX</span></div>
+    <nav><a href="#">Services</a><a href="#">Our Work</a><a href="#">Reviews</a><a class="phone" href="#">📞 Get a Quote</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="photo-note">📷 Real photo of Dylan working goes here</div>
+    <div class="content">
+      <h1>The neighbourhood's <span>go-to guy</span> for getting it done.</h1>
+      <p>Moving help, yard work, repairs, and odd jobs — handled by someone local you can actually trust.</p>
+      <a class="btn" href="#">Get a Free Quote</a><a class="btn alt" href="#">See Our Work</a>
+      <div class="ticks">
+        <div>Free quotes</div><div>Flat-rate pricing</div><div>Local &amp; insured</div><div>5★ rated</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="underline"></div>
+    <div class="grid">
+      <div class="card"><div class="img">📦</div><div class="body"><h3>Moving Help</h3><p>Loading, unloading, hauling and full moves — handled with care.</p></div></div>
+      <div class="card"><div class="img">🌿</div><div class="body"><h3>Yard Work</h3><p>Mowing, trimming, cleanups and seasonal yard maintenance.</p></div></div>
+      <div class="card"><div class="img">🔧</div><div class="body"><h3>Repairs</h3><p>Fences, doors, fixtures and furniture fixed right the first time.</p></div></div>
+      <div class="card"><div class="img">🧹</div><div class="body"><h3>Odd Jobs</h3><p>Assembly, cleanouts, dump runs — whatever's on your list.</p></div></div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>Recent Jobs</h2>
+    <div class="underline"></div>
+    <div class="ggrid">
+      <div class="shot"><span class="em">🚚</span>2-bed move, Elm St</div>
+      <div class="shot"><span class="em">🌳</span>Backyard cleanup, Pine Rd</div>
+      <div class="shot"><span class="em">🪚</span>Fence rebuild, King Ave</div>
+      <div class="shot"><span class="em">🛋️</span>Furniture assembly, Lake Dr</div>
+    </div>
+    <p class="gnote">📷 These become real before/after photos of Dylan's actual jobs</p>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to cross it off your list?</h2>
+    <p>Free quote in 24 hours. Most jobs done within the week.</p>
+    <a class="btn" href="#">📞 (555) 123-4567</a>
+  </section>
+
+  <footer>Dylan's Job Box · dylan@dylansjobbox.com · Proudly serving the neighbourhood</footer>
+</body>
+</html>

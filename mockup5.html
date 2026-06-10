@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dylan's Job Box — Dark Pro</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Segoe UI", Helvetica, sans-serif; background: #0f1115; color: #e7e9ee; line-height: 1.6; }
+
+  header { display: flex; justify-content: space-between; align-items: center; padding: 20px 7%; border-bottom: 1px solid #1f232b; }
+  .logo { font-weight: 800; font-size: 18px; }
+  .logo span { color: #f5b942; }
+  nav a { color: #9aa1ad; text-decoration: none; margin-left: 26px; font-size: 14px; }
+  nav a:hover { color: #f5b942; }
+
+  .hero { padding: 100px 7% 80px; display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
+  .hero .text { flex: 1; min-width: 300px; }
+  .hero h1 { font-size: 50px; font-weight: 800; line-height: 1.08; letter-spacing: -1px; margin-bottom: 20px; }
+  .hero h1 span { color: #f5b942; }
+  .hero p { color: #9aa1ad; font-size: 17px; max-width: 480px; margin-bottom: 30px; }
+  .btn { display: inline-block; background: #f5b942; color: #0f1115; padding: 15px 34px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 15px; }
+  .btn:hover { background: #ffc955; }
+  .hero .panel { flex: 1; min-width: 280px; background: #151920; border: 1px solid #232936; border-radius: 16px; padding: 30px; }
+  .panel h3 { font-size: 15px; color: #f5b942; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
+  .panel .item { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid #1f232b; font-size: 15px; }
+  .panel .item:last-child { border: none; }
+  .panel .item .ok { color: #58c47e; font-weight: 600; }
+
+  .services { padding: 30px 7% 90px; }
+  .services h2, .trust h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 34px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card { background: #151920; border: 1px solid #232936; border-radius: 14px; padding: 28px; transition: border-color .15s; }
+  .card:hover { border-color: #f5b942; }
+  .card .icon { font-size: 30px; margin-bottom: 14px; }
+  .card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #9aa1ad; }
+
+  .trust { background: #12151b; padding: 80px 7%; }
+  .tgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .review { background: #151920; border: 1px solid #232936; border-radius: 14px; padding: 24px; }
+  .review .stars { color: #f5b942; margin-bottom: 10px; letter-spacing: 2px; }
+  .review p { font-size: 14px; color: #c3c8d2; margin-bottom: 12px; }
+  .review .who { font-size: 13px; color: #9aa1ad; font-weight: 600; }
+
+  .cta { text-align: center; padding: 90px 7%; }
+  .cta h2 { font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 14px; }
+  .cta p { color: #9aa1ad; margin-bottom: 30px; }
+
+  footer { border-top: 1px solid #1f232b; padding: 36px 7%; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: #9aa1ad; font-size: 14px; }
+  footer strong { color: #e7e9ee; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">DYLAN'S <span>JOB BOX</span></div>
+    <nav><a href="#">Services</a><a href="#">Reviews</a><a href="#">Rates</a><a href="#">Contact</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="text">
+      <h1>Your local pro for <span>every odd job.</span></h1>
+      <p>Moving, yard work, repairs, and everything your to-do list has been collecting. One call, sorted.</p>
+      <a class="btn" href="#">Request a Quote</a>
+    </div>
+    <div class="panel">
+      <h3>This week's jobs</h3>
+      <div class="item"><span>🚚 2-bedroom move — Elm St</span><span class="ok">Done</span></div>
+      <div class="item"><span>🌿 Hedge trim + lawn — Pine Rd</span><span class="ok">Done</span></div>
+      <div class="item"><span>🔧 Deck board repair — King Ave</span><span class="ok">Done</span></div>
+      <div class="item"><span>🧹 Garage cleanout — Lake Dr</span><span style="color:#f5b942;font-weight:600">Booked</span></div>
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>What Dylan handles</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">📦</div><h3>Moving Help</h3><p>Careful loading, hauling, and placement — from one couch to a whole house.</p></div>
+      <div class="card"><div class="icon">🌿</div><h3>Yard Work</h3><p>Mowing, trimming, cleanup, and gutters. Curb appeal restored.</p></div>
+      <div class="card"><div class="icon">🔧</div><h3>Repairs</h3><p>Fences, doors, fixtures, and furniture — fixed properly the first time.</p></div>
+      <div class="card"><div class="icon">⚡</div><h3>Odd Jobs</h3><p>Assembly, mounting, dump runs, cleanouts. If it's on your list, it's covered.</p></div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <h2>Trusted around the block</h2>
+    <div class="tgrid">
+      <div class="review"><div class="stars">★★★★★</div><p>"Showed up early, finished ahead of schedule, charged exactly what he quoted."</p><div class="who">Marcus T. — Elm Street</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Our go-to for everything now. He's done our yard, our fence, and our move."</p><div class="who">The Chens — Pine Road</div></div>
+      <div class="review"><div class="stars">★★★★★</div><p>"Professional, friendly, and strong as an ox. Highly recommend."</p><div class="who">Donna W. — King Avenue</div></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Got a job for the box?</h2>
+    <p>Free quotes · Flat pricing · Usually booked within 48 hours</p>
+    <a class="btn" href="#">📞 (555) 123-4567</a>
+  </section>
+
+  <footer>
+    <div><strong>Dylan's Job Box</strong> — neighbourhood odd jobs, done right.</div>
+    <div>dylan@dylansjobbox.com · (555) 123-4567</div>
+  </footer>
+</body>
+</html>
