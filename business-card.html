@@ -37,6 +37,9 @@
   .front .rule { height: 3px; background: #5b3a24; margin: 6px 0 10px; }
   .front .tag-line { font-family: "Caveat", cursive; font-size: 22px; color: #5b3a24; }
   .front .contact { font-size: 15px; letter-spacing: 1px; line-height: 1.7; color: #33402a; }
+  .qr-box { position: absolute; right: 5%; bottom: 8%; background: #fffdf2; padding: 7px 7px 4px; border: 2.5px solid #5b3a24; text-align: center; box-shadow: 3px 3px 0 rgba(91,58,36,.35); }
+  .qr-box img, .qr-box canvas { display: block; }
+  .qr-label { font-size: 10px; letter-spacing: 2px; color: #5b3a24; margin-top: 4px; }
 
   /* BACK — checklist style */
   .back { display: flex; flex-direction: column; justify-content: space-between; }
@@ -77,6 +80,7 @@
             EMAIL: DylansJobBoxLLC@Yahoo.com
           </div>
         </div>
+        <div class="qr-box"><div id="qr-front"></div><div class="qr-label">SCAN ME</div></div>
       </div>
     </div>
 
@@ -100,6 +104,17 @@
     </div>
   </div>
 
-  <p class="print-note">💡 The back doubles as an actual work-order: people can literally check a box, photograph the card, and text it to Dylan. For printing, this converts to a standard 3.5″ × 2″ card at 300 DPI.</p>
+  <p class="print-note">💡 The back doubles as an actual work-order: people can literally check a box, photograph the card, and text it to Dylan. For printing, this converts to a standard 3.5″ × 2″ card at 300 DPI.<br><br>
+  📱 The QR code points to <b>meowbots.ca/djb</b> — a redirect we control. When Dylan gets his own domain, we update one line on the server and every printed card automatically leads to the new site.</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qr-front'), {
+    text: "https://www.meowbots.ca/djb",
+    width: 84, height: 84,
+    colorDark: "#33402a", colorLight: "#fffdf2",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
 </body>
 </html>
