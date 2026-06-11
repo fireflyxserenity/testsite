@@ -19,7 +19,7 @@ include 'includes/header.php';
         <label for="jobtype">What needs doing?</label>
         <select id="jobtype" name="jobtype">
           <option>Moving aid</option>
-          <option>Hauling</option>
+          <option>Dump run / cleanout</option>
           <option>Yard work</option>
           <option>Repair / fix-it</option>
           <option>Odd job / other</option>
