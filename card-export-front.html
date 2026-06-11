@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Card Front Export</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1050px; height: 600px; overflow: hidden; }
+  .zoom { zoom: 2; }
+  .card {
+    width: 525px; height: 300px; position: relative; font-family: "Special Elite", "Courier New", monospace;
+    background:
+      linear-gradient(rgba(122,143,160,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122,143,160,.10) 1px, transparent 1px),
+      radial-gradient(ellipse at 30% 20%, #e3cda2, #d9bf93 60%, #cbab78);
+    background-size: 26px 26px, 26px 26px, 100% 100%;
+    color: #3a3424; padding: 21px 32px;
+  }
+  .hole { position: absolute; top: 50%; left: 24px; transform: translateY(-50%); width: 26px; height: 26px; border-radius: 50%; background: #fff; box-shadow: inset 0 2px 4px rgba(0,0,0,.45), 0 0 0 6px #c4a674; }
+  .inner { margin-left: 58px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+  .stamp-row { display: flex; justify-content: space-between; align-items: flex-start; }
+  .handle { font-size: 11px; letter-spacing: 1px; color: #8a3324; border: 2px solid #8a3324; padding: 4px 10px; transform: rotate(-3deg); opacity: .85; }
+  .no { font-size: 14px; color: #8a3324; letter-spacing: 2px; }
+  h2 { font-family: "Special Elite", monospace; font-size: 34px; letter-spacing: 3px; color: #33402a; line-height: 1.05; margin: 6px 0 2px; }
+  .ruleline { height: 3px; background: #5b3a24; margin: 6px 0 10px; width: 300px; }
+  .tag-line { font-family: "Caveat", cursive; font-size: 22px; color: #5b3a24; }
+  .contact { font-size: 14px; letter-spacing: 1px; line-height: 1.7; color: #33402a; }
+  .qr-box { position: absolute; right: 26px; bottom: 22px; background: #fffdf2; padding: 7px 7px 4px; border: 2.5px solid #5b3a24; text-align: center; }
+  .qr-box img, .qr-box canvas { display: block; }
+  .qr-label { font-size: 10px; letter-spacing: 2px; color: #5b3a24; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="zoom">
+  <div class="card">
+    <div class="hole"></div>
+    <div class="inner">
+      <div class="stamp-row">
+        <div class="handle">⚠ HANDLE WITH CARE-ISH</div>
+        <div class="no">No. 001</div>
+      </div>
+      <div>
+        <h2>DYLAN'S<br>JOB BOX</h2>
+        <div class="ruleline"></div>
+        <div class="tag-line">Your neighbor for the in-between stuff.</div>
+      </div>
+      <div class="contact">
+        CALL OR TEXT: (407) 383-2301<br>
+        EMAIL: DylansJobBoxLLC@Yahoo.com
+      </div>
+    </div>
+    <div class="qr-box"><div id="qr-front"></div><div class="qr-label">SCAN ME</div></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  new QRCode(document.getElementById('qr-front'), {
+    text: "https://www.meowbots.ca/djb",
+    width: 84, height: 84,
+    colorDark: "#33402a", colorLight: "#fffdf2",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+</script>
+</body>
+</html>

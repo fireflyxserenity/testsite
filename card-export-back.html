@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Card Back Export</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1050px; height: 600px; overflow: hidden; }
+  .zoom { zoom: 2; }
+  .card {
+    width: 525px; height: 300px; font-family: "Special Elite", "Courier New", monospace;
+    background:
+      linear-gradient(rgba(122,143,160,.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122,143,160,.10) 1px, transparent 1px),
+      radial-gradient(ellipse at 30% 20%, #e3cda2, #d9bf93 60%, #cbab78);
+    background-size: 26px 26px, 26px 26px, 100% 100%;
+    color: #3a3424; padding: 21px 32px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .head { display: flex; justify-content: space-between; font-size: 12px; color: #8a3324; letter-spacing: 2px; }
+  h3 { font-family: "Special Elite", monospace; font-size: 19px; letter-spacing: 2px; color: #33402a; margin: 10px 0 4px; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; margin: 8px 0; }
+  .chk { display: flex; align-items: center; gap: 10px; font-family: "Caveat", cursive; font-size: 21px; color: #5b3a24; }
+  .box { width: 17px; height: 17px; border: 2.5px solid #5b3a24; flex-shrink: 0; }
+  .quote-line { font-size: 12px; letter-spacing: 1px; color: #33402a; border-top: 2px dashed #a98c5e; padding-top: 10px; }
+  .quote-line b { color: #8a3324; }
+</style>
+</head>
+<body>
+<div class="zoom">
+  <div class="card">
+    <div class="head"><span>★ WORK ORDER ★</span><span>EST. 2026</span></div>
+    <div>
+      <h3>WHAT NEEDS DOING?</h3>
+      <div class="checks">
+        <div class="chk"><span class="box"></span>Moving Aid</div>
+        <div class="chk"><span class="box"></span>Hauling</div>
+        <div class="chk"><span class="box"></span>Yard Work</div>
+        <div class="chk"><span class="box"></span>Odd Jobs</div>
+        <div class="chk"><span class="box"></span>Fixing Stuff</div>
+        <div class="chk"><span class="box"></span>Other: ______</div>
+      </div>
+    </div>
+    <div class="quote-line">CHECK A BOX, SNAP A PIC, TEXT IT TO <b>(407) 383-2301</b> — FREE QUOTE SAME DAY.</div>
+  </div>
+</div>
+</body>
+</html>
