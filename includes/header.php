@@ -1,6 +1,8 @@
 <?php
 // Shared header — edit nav here once, every page updates.
 // Pages set $page (for the active nav link) and optionally $title before including.
+require_once __DIR__ . '/../lib.php';
+$site  = djb_site();
 $title = $title ?? "Dylan's Job Box — Moving, Yard Work, Repairs & Odd Jobs";
 $page  = $page ?? '';
 function nav_link($href, $label, $key, $page) {
@@ -17,6 +19,7 @@ function nav_link($href, $label, $key, $page) {
 <meta name="description" content="Dylan's Job Box — your neighbor for the in-between stuff. Moving help, hauling, yard work, repairs & odd jobs. Honest work, fair prices.">
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style><?= djb_theme_css() ?></style>
 </head>
 <body>
   <header>

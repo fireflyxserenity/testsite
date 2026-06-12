@@ -1,7 +1,8 @@
 <?php
 // Quote form handler — validates, emails Dylan, redirects back to quote.php.
-const DYLAN_EMAIL = 'DylansJobBoxLLC@Yahoo.com';
-const FROM_EMAIL  = 'quotes@meowbots.ca'; // must be on this server's domain for deliverability
+// Recipient address is managed in the admin panel (admin.php → Site Text → Email).
+require_once __DIR__ . '/lib.php';
+const FROM_EMAIL = 'quotes@meowbots.ca'; // must be on this server's domain for deliverability
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   header('Location: quote.php');
@@ -35,7 +36,7 @@ if (filter_var($contact, FILTER_VALIDATE_EMAIL)) {
   $headers .= "Reply-To: $contact\r\n";
 }
 
-$ok = mail(DYLAN_EMAIL, "🧰 New job request: $jobtype — $name", $body, $headers);
+$ok = mail(djb_site()['email'], "🧰 New job request: $jobtype — $name", $body, $headers);
 
 header('Location: quote.php?' . ($ok ? 'sent=1' : 'err=2'));
 exit;

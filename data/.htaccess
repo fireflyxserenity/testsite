@@ -1,0 +1,2 @@
+# Block all direct web access to the JSON data files — only PHP reads them.
+Require all denied

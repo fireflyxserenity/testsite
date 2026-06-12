@@ -1,47 +1,62 @@
-/* Dylan's Job Box — Extra Rustic theme. One stylesheet for all pages. */
+/* Dylan's Job Box — Extra Rustic theme. One stylesheet for all pages.
+   Colours come from CSS variables — Dylan picks them in admin.php (data/theme.json).
+   The :root block below is just the fallback default. */
+:root {
+  --accent: #f4a52e;  /* stamp orange */
+  --btn:    #c1652f;  /* rust buttons */
+  --wood:   #8b5e2f;  /* background planks */
+  --dark:   #2e2012;  /* borders / header / footer */
+  --paper:  #f5efe1;  /* parchment panels */
+  --board:  #4a331b;  /* hero sign & form board */
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: "Special Elite", "Courier New", monospace; color: #3e2f1c;
-  background: repeating-linear-gradient(0deg, #8b5e2f 0px, #8b5e2f 90px, #7d5429 90px, #7d5429 92px, #835830 92px, #835830 180px, #76502a 180px, #76502a 182px); }
+  background: repeating-linear-gradient(0deg,
+    var(--wood) 0px, var(--wood) 90px,
+    color-mix(in srgb, var(--wood) 88%, black) 90px, color-mix(in srgb, var(--wood) 88%, black) 92px,
+    color-mix(in srgb, var(--wood) 95%, black) 92px, color-mix(in srgb, var(--wood) 95%, black) 180px,
+    color-mix(in srgb, var(--wood) 84%, black) 180px, color-mix(in srgb, var(--wood) 84%, black) 182px); }
 h1, h2, h3, .logo { font-family: "Rockwell", "Arial Black", serif; }
 .hand { font-family: "Caveat", cursive; }
 
 /* Header / nav (shared) */
-header { background: #2e2012; color: #f5efe1; padding: 18px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 8px solid #f4a52e; flex-wrap: wrap; gap: 10px; }
-.logo { font-size: 22px; letter-spacing: 2px; text-transform: uppercase; color: #f5efe1; text-decoration: none; }
-nav a { color: #e8d9bd; text-decoration: none; margin-left: 22px; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
-nav a:hover, nav a.active { color: #f4a52e; }
+header { background: var(--dark); color: var(--paper); padding: 18px 6%; display: flex; justify-content: space-between; align-items: center; border-bottom: 8px solid var(--accent); flex-wrap: wrap; gap: 10px; }
+.logo { font-size: 22px; letter-spacing: 2px; text-transform: uppercase; color: var(--paper); text-decoration: none; }
+nav a { color: color-mix(in srgb, var(--paper) 88%, var(--wood)); text-decoration: none; margin-left: 22px; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
+nav a:hover, nav a.active { color: var(--accent); }
 
 /* Hero sign */
 .hero { padding: 90px 6% 70px; text-align: center; }
-.sign { display: inline-block; background: #4a331b; color: #f5efe1; padding: 46px 64px; border: 6px solid #2e2012; box-shadow: 0 14px 30px rgba(0,0,0,.5), inset 0 0 40px rgba(0,0,0,.4); position: relative; max-width: 660px; }
+.sign { display: inline-block; background: var(--board); color: var(--paper); padding: 46px 64px; border: 6px solid var(--dark); box-shadow: 0 14px 30px rgba(0,0,0,.5), inset 0 0 40px rgba(0,0,0,.4); position: relative; max-width: 660px; }
 .sign::before, .sign::after { content: "🔩"; position: absolute; top: 8px; font-size: 14px; }
 .sign::before { left: 12px; } .sign::after { right: 12px; }
-.sign h1 { font-size: 42px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; color: #f4a52e; text-shadow: 3px 3px 0 #2e2012; }
-.sign p { font-size: 16px; margin-bottom: 26px; color: #e8d9bd; }
-.btn { display: inline-block; background: #c1652f; color: #fff; padding: 16px 36px; text-decoration: none; font-weight: bold; font-family: "Rockwell", "Arial Black", serif; border: 4px solid #2e2012; box-shadow: 5px 5px 0 #2e2012; text-transform: uppercase; font-size: 14px; letter-spacing: 2px; }
-.btn:hover { background: #a85423; }
+.sign h1 { font-size: 42px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; color: var(--accent); text-shadow: 3px 3px 0 var(--dark); }
+.sign p { font-size: 16px; margin-bottom: 26px; color: color-mix(in srgb, var(--paper) 92%, var(--wood)); }
+.btn { display: inline-block; background: var(--btn); color: #fff; padding: 16px 36px; text-decoration: none; font-weight: bold; font-family: "Rockwell", "Arial Black", serif; border: 4px solid var(--dark); box-shadow: 5px 5px 0 var(--dark); text-transform: uppercase; font-size: 14px; letter-spacing: 2px; }
+.btn:hover { background: color-mix(in srgb, var(--btn) 85%, black); }
 
 /* Parchment section panels */
-section.paper { background: #f5efe1; margin: 0 6% 70px; padding: 60px 6%; border: 4px solid #2e2012; box-shadow: 0 10px 24px rgba(0,0,0,.45); }
+section.paper { background: var(--paper); margin: 0 6% 70px; padding: 60px 6%; border: 4px solid var(--dark); box-shadow: 0 10px 24px rgba(0,0,0,.45); }
 section.paper:first-of-type { margin-top: 70px; }
 section.paper h2 { text-align: center; font-size: 30px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
-.rule { width: 110px; height: 6px; background: #c1652f; margin: 0 auto 40px; box-shadow: 2px 2px 0 #2e2012; }
+.rule { width: 110px; height: 6px; background: var(--btn); margin: 0 auto 40px; box-shadow: 2px 2px 0 var(--dark); }
 
 /* Service planks */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 26px; max-width: 1000px; margin: 0 auto; }
-.plank { background: linear-gradient(180deg, #a87440, #8b5e2f); color: #fff; border: 4px solid #2e2012; padding: 28px 20px; text-align: center; box-shadow: 5px 5px 0 #2e2012; }
+.plank { background: linear-gradient(180deg, color-mix(in srgb, var(--wood) 78%, white), var(--wood)); color: #fff; border: 4px solid var(--dark); padding: 28px 20px; text-align: center; box-shadow: 5px 5px 0 var(--dark); }
 .plank .icon { font-size: 40px; margin-bottom: 10px; }
-.plank h3 { font-size: 17px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; text-shadow: 2px 2px 0 #2e2012; }
-.plank p { font-size: 13px; line-height: 1.55; color: #f5efe1; }
+.plank h3 { font-size: 17px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; text-shadow: 2px 2px 0 var(--dark); }
+.plank p { font-size: 13px; line-height: 1.55; color: var(--paper); }
 
 /* Quote form board */
-.board { max-width: 540px; margin: 0 auto; background: #4a331b; border: 4px solid #2e2012; padding: 30px 34px; box-shadow: 6px 6px 0 #2e2012; }
+.board { max-width: 540px; margin: 0 auto; background: var(--board); border: 4px solid var(--dark); padding: 30px 34px; box-shadow: 6px 6px 0 var(--dark); }
 .field { margin-bottom: 16px; }
-.field label { display: block; font-family: "Rockwell", "Arial Black", serif; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #f4a52e; margin-bottom: 7px; }
-.field input, .field select, .field textarea { width: 100%; padding: 12px 14px; background: #f5efe1; border: 3px solid #2e2012; color: #3e2f1c; font-family: "Special Elite", "Courier New", monospace; font-size: 14px; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #f4a52e; }
-.send { width: 100%; background: #c1652f; color: #fff; border: 4px solid #f5efe1; box-shadow: 5px 5px 0 #2e2012; padding: 16px; font-family: "Rockwell", "Arial Black", serif; font-size: 15px; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 8px; }
-.send:hover { background: #a85423; }
+.field label { display: block; font-family: "Rockwell", "Arial Black", serif; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 7px; }
+.field input, .field select, .field textarea { width: 100%; padding: 12px 14px; background: var(--paper); border: 3px solid var(--dark); color: #3e2f1c; font-family: "Special Elite", "Courier New", monospace; font-size: 14px; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+.send { width: 100%; background: var(--btn); color: #fff; border: 4px solid var(--paper); box-shadow: 5px 5px 0 var(--dark); padding: 16px; font-family: "Rockwell", "Arial Black", serif; font-size: 15px; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 8px; }
+.send:hover { background: color-mix(in srgb, var(--btn) 85%, black); }
 .small-note { text-align: center; font-size: 12px; color: #6e5a3d; margin-top: 16px; }
 .honeypot { position: absolute; left: -9999px; }
 
@@ -51,7 +66,7 @@ section.paper h2 { text-align: center; font-size: 30px; text-transform: uppercas
 .banner.err { background: #f7e3dc; border-color: #8a3324; color: #8a3324; }
 
 /* Jobs corkboard */
-.cork { max-width: 880px; margin: 0 auto; background: #c89b66; border: 12px solid #5c4023; padding: 36px 30px; box-shadow: inset 0 0 40px rgba(0,0,0,.35), 0 8px 18px rgba(0,0,0,.3); display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px; }
+.cork { max-width: 880px; margin: 0 auto; background: #c89b66; border: 12px solid color-mix(in srgb, var(--board) 80%, var(--wood)); padding: 36px 30px; box-shadow: inset 0 0 40px rgba(0,0,0,.35), 0 8px 18px rgba(0,0,0,.3); display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px; }
 .pinned { background: #fffdf2; padding: 22px 14px 18px; text-align: center; position: relative; box-shadow: 0 5px 10px rgba(0,0,0,.35); font-size: 13px; line-height: 1.5; }
 .pinned:nth-child(odd) { transform: rotate(-2.5deg); }
 .pinned:nth-child(even) { transform: rotate(2.5deg); background: #fdf6d8; }
@@ -59,14 +74,14 @@ section.paper h2 { text-align: center; font-size: 30px; text-transform: uppercas
 .pinned .job-icon { font-size: 26px; margin-bottom: 6px; }
 .stamp { display: inline-block; margin-top: 10px; font-family: "Rockwell", "Arial Black", serif; font-size: 11px; letter-spacing: 1px; padding: 3px 10px; border: 2px solid; transform: rotate(-5deg); }
 .stamp.done { color: #2e7d32; border-color: #2e7d32; }
-.stamp.booked { color: #c1652f; border-color: #c1652f; }
+.stamp.booked { color: var(--btn); border-color: var(--btn); }
 
 /* About */
 .about-text { max-width: 620px; margin: 0 auto; text-align: center; font-size: 15px; line-height: 1.75; }
 
 /* Footer (shared) */
-footer { background: #2e2012; color: #c9b48a; text-align: center; padding: 40px 6%; font-size: 14px; border-top: 8px solid #f4a52e; }
-footer .phone { font-family: "Rockwell", "Arial Black", serif; font-size: 24px; color: #f4a52e; margin-bottom: 8px; letter-spacing: 2px; }
+footer { background: var(--dark); color: color-mix(in srgb, var(--paper) 70%, var(--wood)); text-align: center; padding: 40px 6%; font-size: 14px; border-top: 8px solid var(--accent); }
+footer .phone { font-family: "Rockwell", "Arial Black", serif; font-size: 24px; color: var(--accent); margin-bottom: 8px; letter-spacing: 2px; }
 
 /* Mobile */
 @media (max-width: 640px) {

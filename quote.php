@@ -11,7 +11,7 @@ include 'includes/header.php';
     <?php if (isset($_GET['sent'])): ?>
       <div class="banner ok">✅ Job received! Dylan will get back to you shortly — usually the same day.</div>
     <?php elseif (isset($_GET['err'])): ?>
-      <div class="banner err">⚠️ Something went wrong — please fill in all fields, or just call/text (407) 383-2301.</div>
+      <div class="banner err">⚠️ Something went wrong — please fill in all fields, or just call/text <?= htmlspecialchars($site['phone']) ?>.</div>
     <?php endif; ?>
 
     <form class="board" method="post" action="send-quote.php">

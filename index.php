@@ -2,8 +2,8 @@
 
   <section class="hero">
     <div class="sign">
-      <h1>Hard Work.<br>Honest Rates.</h1>
-      <p>Your neighbour for the in-between stuff — moving, hauling, yard work, repairs &amp; odd jobs of every shape and size.</p>
+      <h1><?= nl2br(htmlspecialchars($site['hero_title'])) ?></h1>
+      <p><?= htmlspecialchars($site['hero_text']) ?></p>
       <a class="btn" href="quote.php">Request a Quote</a>
     </div>
   </section>
@@ -12,10 +12,13 @@
     <h2>On the Workbench</h2>
     <div class="rule"></div>
     <div class="grid">
-      <div class="plank"><div class="icon">📦</div><h3>Moving Aid</h3><p>Heavy lifting, truck loading, full apartment &amp; house moves.</p></div>
-      <div class="plank"><div class="icon">🚛</div><h3>Hauling</h3><p>Dump runs, junk removal, garage &amp; basement cleanouts.</p></div>
-      <div class="plank"><div class="icon">🌾</div><h3>Yard Work</h3><p>Mowing, raking, hedges, gutters &amp; seasonal cleanups.</p></div>
-      <div class="plank"><div class="icon">🔨</div><h3>Odd Jobs</h3><p>Fixing stuff, assembly, mounting &amp; anything in between.</p></div>
+      <?php foreach (djb_services() as $s): ?>
+        <div class="plank">
+          <div class="icon"><?= $s['icon'] ?></div>
+          <h3><?= htmlspecialchars($s['title']) ?></h3>
+          <p><?= htmlspecialchars($s['text']) ?></p>
+        </div>
+      <?php endforeach; ?>
     </div>
   </section>
 
